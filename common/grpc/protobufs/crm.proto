@@ -1,0 +1,31 @@
+syntax = "proto3";
+package crm_proto;
+
+
+message ContactInfoRequest{
+    string contact_id = 1;
+    string department = 2;
+    string organisation = 3;
+}
+
+
+message ContactInfoResponse{
+    bool valid = 1;
+    string id = 2;
+    string department = 3;
+    string organisation = 4;
+    string first_name = 5;
+    string last_name = 6;
+    string email = 7;
+    string phone_number = 8;
+    string title = 9;
+    string owner = 10;
+    string designation = 11;
+    string tags = 12;
+    string company = 13;
+}
+
+
+service ContactData {
+    rpc GetContact(ContactInfoRequest) returns (ContactInfoResponse) {}
+}
